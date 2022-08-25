@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  </head>
+  <style>
+    #nav {
+      text-align: center;
+      background: #0aa0f5;
+      height: 80px;
+      position: fixed; /*绝对定位，可用"left", "top", "right"，"bottom" 控制*/
+      width: 100%;
+      top: 0px;
+    }
+
+    .content {
+      height: 500px;
+      background: #1eae9e;
+    }
+  </style>
+
+  <script>
+    var scrollTopLast = 0
+    window.onscroll = function (e) {
+      var scrollTop = e.target.scrollingElement.scrollTop
+      if (scrollTop > scrollTopLast) {
+        console.log('滑轮向下滚动')
+        $('#nav').css('transition', '0.5s')
+        $('#nav').css('opacity', '0')
+      } else {
+        console.log('滑轮向上滚动')
+        $('#nav').css('transition', '0.5s')
+        $('#nav').css('opacity', '1')
+      }
+      console.log(e.target.scrollingElement.scrollTop)
+      scrollTopLast = scrollTop
+    }
+  </script>
+  <body>
+    <div id="nav">导航栏</div>
+    <div class="content">模拟内容</div>
+    <div class="content">模拟内容</div>
+    <div class="content">模拟内容</div>
+    <div class="content">模拟内容</div>
+    <div class="content">模拟内容</div>
+    <div class="content">模拟内容</div>
+    <div class="content">模拟内容</div>
+  </body>
+</html>
