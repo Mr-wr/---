@@ -352,60 +352,60 @@
       //   }
       //   console.log(n)
       // }
-      // demo()
+      // demo()includes
       /*
-       pop
-       shift
-       slice
-       splice 
+                   pop
+                   shift
+                   slice
+                   splice
 
-       unshift
-       push
+                   unshift
+                   push
 
-       reduce
-       map
-       filter
-       foreach
+                   reduce
+                   map
+                   filter
+                   foreach
 
-       indexOf
-       lastIndexof
-       includes
-       includes
+                   indexOf
+                   lastIndexof
+                   includes
+                   includes
 
-       toString
-       concat
-       join
+                   toString
+                   concat
+                   join
 
-       sort
-       reverse
-
-
-       字符串方法
-       split
-       charAt() 方法可以返回指定位置的字符。
-       const str = 'hello';
-       str.charAt(1)  // 输出结果：e 
-       indexOf
-       lastIndexOf
-       startsWith()：该方法用于检测字符串是否以指定的子字符串开始。如果是以指定的子字符串开头返回 true，否则 false。其语法和上面的includes()方法一样
-let str = 'Hello world!';
-
-str.startsWith('Hello') // 输出结果：true
-str.startsWith('Helle') // 输出结果：false
-str.startsWith('wo', 6) // 输出结果：true
-        startsWith
-       endsWith()：该方法用来判断当前字符串是否是以指定的子字符串结尾。如果传入的子字符串在搜索字符串的末尾则返回 true，否则将返回 false。其语法如下：
-concat() 方法用于连接两个或多个字符串。该方法不会改变原有字符串，会返回连接两个或多个字符串的新字符串。其语法如下
-substr()、substring()和 slice() 方法都可以用来截取字符串。
-replace 替换
+                   sort
+                   reverse
 
 
+                   字符串方法
+                   split
+                   charAt() 方法可以返回指定位置的字符。
+                   const str = 'hello';
+                   str.charAt(1)  // 输出结果：e
+                   indexOf
+                   lastIndexOf
+                   startsWith()：该方法用于检测字符串是否以指定的子字符串开始。如果是以指定的子字符串开头返回 true，否则 false。其语法和上面的includes()方法一样
+            let str = 'Hello world!';
+
+            str.startsWith('Hello') // 输出结果：true
+            str.startsWith('Helle') // 输出结果：false
+            str.startsWith('wo', 6) // 输出结果：true
+                    startsWith
+                   endsWith()：该方法用来判断当前字符串是否是以指定的子字符串结尾。如果传入的子字符串在搜索字符串的末尾则返回 true，否则将返回 false。其语法如下：
+            concat() 方法用于连接两个或多个字符串。该方法不会改变原有字符串，会返回连接两个或多个字符串的新字符串。其语法如下
+            substr()、substring()和 slice() 方法都可以用来截取字符串。
+            replace 替换
 
 
 
 
 
-                  */
+
+
+                              */
 
       // 删除
       // pop
@@ -517,16 +517,62 @@ replace 替换
       // objfun.prototype.pname = 'panme'
       // console.log(Object.create(objfun).pname) //undefined
 
-      console.log(5 ** 2)
+      // console.log(5 ** 2)
 
-      Object.create = function (fun) {
-        var newF = function () {}
-        newF.prototype = fun
-        return new F()
+      // Object.create = function (fun) {
+      //   var newF = function () {}
+      //   newF.prototype = fun
+      //   return new F()
+      // }
+
+      // function Fun() {}
+      // const fun = new Fun()
+
+      // console.log('gb:' + i)
+      // var i = 1
+      // foo(1)
+      // function foo(i) {
+      //   if (i == 4) {
+      //     return
+      //   }
+      //   console.log('fb:' + i)
+      //   foo(i + 1)
+      //   console.log('fe:' + i)
+      // }
+      // console.log('ge:' + i)
+      var name = 'window'
+      var person1 = {
+        name: 'person1',
+        foo1: function () {
+          console.log(this.name)
+        },
+        foo2: () => console.log(this.name),
+        foo3: function () {
+          return function () {
+            console.log(this.name)
+          }
+        },
+        foo4: function () {
+          return () => {
+            console.log(this.name)
+          }
+        },
       }
+      var person2 = { name: 'person2' }
 
-      function Fun() {}
-      const fun = new Fun()
+      person1.foo1() // person1
+      person1.foo1.call(person2) // person2
+
+      person1.foo2() // window
+      person1.foo2.call(person2) // window
+
+      person1.foo3()() // window
+      person1.foo3.call(person2)() // window
+      person1.foo3().call(person2) // person2
+
+      person1.foo4()() // window
+      person1.foo4.call(person2)() // window
+      person1.foo4().call(person2) // window
     </script>
     <div class="wrapper">
       <div class="content wh100 border"></div>
