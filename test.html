@@ -31,9 +31,10 @@
   </head>
   <body>
     <script>
-      // alert(typeof NaN) //Number
-      // alert(typeof undefined) // undefined
-      // alert(typeof null) // Object
+      // ========================================================2
+      // alert(typeof NaN)                                                         //Number
+      // alert(typeof undefined)                                                                      // undefined
+      // alert(typeof null)                                                                // Object
 
       // for (var i = 0; i < 3; i++) {
       //   setTimeout(function () {
@@ -98,6 +99,14 @@
       // getName()                                                                                    // 4
       // new Foo().getName()                                                                           // 3
 
+      //
+      // function a() {
+      //   console.log('fun')
+      // }
+      // var a = function () {
+      //   console.log('var')
+      // }
+      // a()
       // 请用三种方式写出4平分一个div的布局方式
 
       // es5和es6封装一个数组去重方法
@@ -167,6 +176,18 @@
       //   }
       //   return tmp
       // }
+      // function deefClone(obj) {
+      //   if (typeof obj != 'object') return
+      //   let temp = obj instanceof Object ? {} : []
+      //   console.log('log - deefClone - obj.instanceof', obj.instanceof)
+      //   for (key in obj) {
+      //     if (obj.hasOwnProperty(key)) {
+      //       temp[key] = obj[key] instanceof Object ? deefClone(obj[key]) : obj[key]
+      //     }
+      //   }
+      //   return temp
+      // }
+      // console.log(deefClone({ a: { c: { wer: 'sadfsdf' } } }))
       // const a = {
       //   a: 'asdf',
       //   b: {
@@ -188,8 +209,9 @@
       // 3、把构造函数的this指向这个空对象
       // 4、新对象属性赋值
       // 5、返回this
-      // ----------------------------------------------------------2
-      // console.log(typeof fn)                                                   // function
+      // ----------------------------------------------------------3
+
+      // console.log(typeof fn)                                                   // function 注意fn是提前
       // function fn() {}
       // var fn
       // --------------------------------------------------------------2
@@ -310,13 +332,13 @@
       //   return ary.reduce((pre, cur) => pre.concat(cur.constructor === Array ? test(cur) : cur), [])
       // }
 
-      function test(ary) {
-        let tmp = ary.reduce((pre, cur) => {
-          pre.concat(Array.isArray(cur) ? test(cur) : cur)
-          return pre
-        }, [])
-        return tmp
-      }
+      // function test(ary) {
+      //   let tmp = ary.reduce((pre, cur) => {
+      //     pre = pre.concat(Array.isArray(cur) ? test(cur) : cur)
+      //     return pre
+      //   }, [])
+      //   return tmp
+      // }
       console.log(test(ary))
       // console.log(flatten(ary)) //  [1, 2, 3, 4，5]
       // console.log([1, 2].concat([12, 312, 312, 3123])) //[1, 2, 12, 312, 312, 3123]
@@ -336,6 +358,33 @@
       // }
       // var demo = say()
       // demo()
+      // 删除最后一个
+      // pop
+      // 删除第一个
+      // shift
+      // 添加最后一个
+      // push
+      // 添加第一个
+      // unshift
+      // 循环判断并返回真确的元素
+      // map
+      // filter
+      // reduce
+      // foreach
+      // slice
+      // splice
+
+      // 查找
+      // find(()=>) //返回元素
+      // findIndex // 返回索引
+      // includes // 返回Boolean
+
+      // toString
+      // join
+      // concat
+
+      // lastIndexOf
+      // indexOf
 
       // 去重
       // let ary = ['a', 'b', 'c', 'f', 'e', 'a', 'a', 'b', 'c', 'a']
@@ -353,59 +402,77 @@
       //   console.log(n)
       // }
       // demo()includes
+      //
+
       /*
-                   pop
-                   shift
-                   slice
-                   splice
+                         pop
+                         shift
+                         slice
+                         splice
 
-                   unshift
-                   push
+                         unshift
+                         push
 
-                   reduce
-                   map
-                   filter
-                   foreach
+                         reduce
+                         map
+                         filter
+                         foreach
 
-                   indexOf
-                   lastIndexof
-                   includes
-                   includes
+                         indexOf
+                         lastIndexof
+                         includes
+                         includes
 
-                   toString
-                   concat
-                   join
+                         toString
+                         concat
+                         join
 
-                   sort
-                   reverse
-
-
-                   字符串方法
-                   split
-                   charAt() 方法可以返回指定位置的字符。
-                   const str = 'hello';
-                   str.charAt(1)  // 输出结果：e
-                   indexOf
-                   lastIndexOf
-                   startsWith()：该方法用于检测字符串是否以指定的子字符串开始。如果是以指定的子字符串开头返回 true，否则 false。其语法和上面的includes()方法一样
-            let str = 'Hello world!';
-
-            str.startsWith('Hello') // 输出结果：true
-            str.startsWith('Helle') // 输出结果：false
-            str.startsWith('wo', 6) // 输出结果：true
-                    startsWith
-                   endsWith()：该方法用来判断当前字符串是否是以指定的子字符串结尾。如果传入的子字符串在搜索字符串的末尾则返回 true，否则将返回 false。其语法如下：
-            concat() 方法用于连接两个或多个字符串。该方法不会改变原有字符串，会返回连接两个或多个字符串的新字符串。其语法如下
-            substr()、substring()和 slice() 方法都可以用来截取字符串。
-            replace 替换
+                         sort
+                         reverse
 
 
+                         字符串方法
+                         split
+                         charAt() 方法可以返回指定位置的字符。
+                         const str = 'hello';
+                         str.charAt(1)  // 输出结果：e
+                         indexOf
+                         lastIndexOf
+                         startsWith()：该方法用于检测字符串是否以指定的子字符串开始。如果是以指定的子字符串开头返回 true，否则 false。其语法和上面的includes()方法一样
+                  let str = 'Hello world!';
+
+                  str.startsWith('Hello') // 输出结果：true
+                  str.startsWith('Helle') // 输出结果：false
+                  str.startsWith('wo', 6) // 输出结果：true
+                          startsWith
+                         endsWith()：该方法用来判断当前字符串是否是以指定的子字符串结尾。如果传入的子字符串在搜索字符串的末尾则返回 true，否则将返回 false。其语法如下：
+                  concat() 方法用于连接两个或多个字符串。该方法不会改变原有字符串，会返回连接两个或多个字符串的新字符串。其语法如下
+                  substr()、substring()和 slice() 方法都可以用来截取字符串。
+                  replace 替换
+
+
+                  pop删除最后一个 并返回删除的元素，会改变本身
+                  shift删除第一个，并返回删除的元素，会改变本身
+                  push,unshift
+                  循环
+                  map(itme=>item)返回
+                  includes判断是否存在 
+                  find(item=>iitem)返回的是元素不是数组
+                  filter(item=>item)返回的数组
+                  findIndex返回索引
+                  concat(连接数组)
+                  indexOf查找返回第一个查到到的索引
+                  reduce
+                  reverse反转
+                  lastIndexOf
+                  slice截取，包头不包尾不会改变本身
+                  splice参数1在哪里开始删除，参数2删除几个，参数3需要添加的元素 会改变本身
+                  sort
+                  some 如果有一个元素满足那么就返回
 
 
 
-
-
-                              */
+                                    */
 
       // 删除
       // pop
@@ -416,10 +483,10 @@
       // push
       // unshift
       // 高级循环函数
-      // map
-      // filter
-      // reduce
-      // foreach
+      // map(()=>)
+      // filter(()=>)
+      // reduce(()=>)
+      // foreach(()=>)
 
       // toString
       // 连接
@@ -432,9 +499,12 @@
       //是否包含某个值 返回ture、false
       // includes
       // 查找满足条件的第一个元素和filter函数一样
-      // find
+      // find(()=>)
       // 返回查找满足条件第一个元素的位置
-      // findIndex
+      // findIndex(()=>)
+      // 如果有一个元素满足条件，则表达式返回true , 剩余的元素不会再执行检测
+      // some(()=>)
+
       // let ary = [1, 2, 3, 4, 5, 6, 7, 8, 0]
       // console.log(ary.map(item => ++item))
       // 删除最后一个 并且改变原数组
