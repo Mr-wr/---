@@ -213,7 +213,7 @@
 
       // console.log(typeof fn)                                                   // function 注意fn是提前
       // function fn() {}
-      // var fn
+      // var fn = function fn() {}
       // --------------------------------------------------------------2
       // function fun(n, o) {
       //   console.log(o)
@@ -282,9 +282,9 @@
       // a[b] = '123'
       // a[c] = '456'
       // for (key in a) {
-      //   console.log(key)                                                                                     //[object Object]
+      //   console.log(key)
       // }
-      // console.log(a[b])                                                                                     // 456
+      // console.log(a[b])
 
       // function Sjk() {
       //   getVal = function () {
@@ -322,7 +322,7 @@
       // console.log(x - y)
 
       // 扁平化处理
-      let ary = [1, 322, 3, [13, 31, [12, 321, 312, 3], 13, 13], [1234321, 42314, 234]]
+      // let ary = [1, 322, 3, [13, 31, [12, 321, 312, 3], 13, 13], [1234321, 42314, 234]]
       // function flatten(ary) {
       //   return ary.reduce(function (pre, cur) {
       //     return pre.concat(Array.isArray(cur) ? flatten(cur) : cur)
@@ -339,7 +339,7 @@
       //   }, [])
       //   return tmp
       // }
-      console.log(test(ary))
+      // console.log(test(ary))
       // console.log(flatten(ary)) //  [1, 2, 3, 4，5]
       // console.log([1, 2].concat([12, 312, 312, 3123])) //[1, 2, 12, 312, 312, 3123]
       // console.log([1, 2].concat(1)) //[1, 2, 1]
@@ -357,6 +357,34 @@
       //   return sayAlert
       // }
       // var demo = say()
+
+      /* 会改变原数组
+      pop 删除最后一个
+      shift 删除第一个
+      push 添加到最后一个 返回元素的长度
+      unshift添加到第一个
+      splice(a,b,...c) a 要删除元素的位置，b要删除元素的个数，c要插入的元素 删除元素与添加元素
+      sort 数字排序没有添加参数的情况下只会比较第一个元素
+      reverse 反转
+      */
+
+      /* 不会改变原数组
+      slice(a,b)截取数组返回一个新的数组 a开始的位置，b结束的位置 包括前面不包括后面
+      concat()  连接数组
+      join('adf') 要拼接的数组
+      find() 和filter一样的判断，但是filter返回的是数组，而find返回的是元素
+      map() 判断返回成功的元素数组
+      reduce
+      filter
+      findIndex
+      indexOf
+      lastIndexOf
+      includes 返回boolean
+      foreach
+      toString
+      some 和filter一样但是只要有一个成功了，就直接return返回了boolean
+     
+       */
       // demo()
       // 删除最后一个
       // pop
@@ -379,7 +407,7 @@
       // findIndex // 返回索引
       // includes // 返回Boolean
 
-      // toString
+      // toString 在返回
       // join
       // concat
 
@@ -405,74 +433,74 @@
       //
 
       /*
-                         pop
-                         shift
-                         slice
-                         splice
+                               pop
+                               shift
+                               slice
+                               splice
 
-                         unshift
-                         push
+                               unshift
+                               push
 
-                         reduce
-                         map
-                         filter
-                         foreach
+                               reduce
+                               map
+                               filter
+                               foreach
 
-                         indexOf
-                         lastIndexof
-                         includes
-                         includes
+                               indexOf
+                               lastIndexof
+                               includes
+                               includes
 
-                         toString
-                         concat
-                         join
+                               toString
+                               concat
+                               join
 
-                         sort
-                         reverse
-
-
-                         字符串方法
-                         split
-                         charAt() 方法可以返回指定位置的字符。
-                         const str = 'hello';
-                         str.charAt(1)  // 输出结果：e
-                         indexOf
-                         lastIndexOf
-                         startsWith()：该方法用于检测字符串是否以指定的子字符串开始。如果是以指定的子字符串开头返回 true，否则 false。其语法和上面的includes()方法一样
-                  let str = 'Hello world!';
-
-                  str.startsWith('Hello') // 输出结果：true
-                  str.startsWith('Helle') // 输出结果：false
-                  str.startsWith('wo', 6) // 输出结果：true
-                          startsWith
-                         endsWith()：该方法用来判断当前字符串是否是以指定的子字符串结尾。如果传入的子字符串在搜索字符串的末尾则返回 true，否则将返回 false。其语法如下：
-                  concat() 方法用于连接两个或多个字符串。该方法不会改变原有字符串，会返回连接两个或多个字符串的新字符串。其语法如下
-                  substr()、substring()和 slice() 方法都可以用来截取字符串。
-                  replace 替换
+                               sort
+                               reverse
 
 
-                  pop删除最后一个 并返回删除的元素，会改变本身
-                  shift删除第一个，并返回删除的元素，会改变本身
-                  push,unshift
-                  循环
-                  map(itme=>item)返回
-                  includes判断是否存在 
-                  find(item=>iitem)返回的是元素不是数组
-                  filter(item=>item)返回的数组
-                  findIndex返回索引
-                  concat(连接数组)
-                  indexOf查找返回第一个查到到的索引
-                  reduce
-                  reverse反转
-                  lastIndexOf
-                  slice截取，包头不包尾不会改变本身
-                  splice参数1在哪里开始删除，参数2删除几个，参数3需要添加的元素 会改变本身
-                  sort
-                  some 如果有一个元素满足那么就返回
+                               字符串方法
+                               split
+                               charAt() 方法可以返回指定位置的字符。
+                               const str = 'hello';
+                               str.charAt(1)  // 输出结果：e
+                               indexOf
+                               lastIndexOf
+                               startsWith()：该方法用于检测字符串是否以指定的子字符串开始。如果是以指定的子字符串开头返回 true，否则 false。其语法和上面的includes()方法一样
+                        let str = 'Hello world!';
+
+                        str.startsWith('Hello') // 输出结果：true
+                        str.startsWith('Helle') // 输出结果：false
+                        str.startsWith('wo', 6) // 输出结果：true
+                                startsWith
+                               endsWith()：该方法用来判断当前字符串是否是以指定的子字符串结尾。如果传入的子字符串在搜索字符串的末尾则返回 true，否则将返回 false。其语法如下：
+                        concat() 方法用于连接两个或多个字符串。该方法不会改变原有字符串，会返回连接两个或多个字符串的新字符串。其语法如下
+                        substr()、substring()和 slice() 方法都可以用来截取字符串。
+                        replace 替换
+
+
+                        pop删除最后一个 并返回删除的元素，会改变本身
+                        shift删除第一个，并返回删除的元素，会改变本身
+                        push,unshift
+                        循环
+                        map(itme=>item)返回
+                        includes判断是否存在
+                        find(item=>iitem)返回的是元素不是数组
+                        filter(item=>item)返回的数组
+                        findIndex返回索引
+                        concat(连接数组)
+                        indexOf查找返回第一个查到到的索引
+                        reduce
+                        reverse反转
+                        lastIndexOf
+                        slice截取，包头不包尾不会改变本身
+                        splice参数1在哪里开始删除，参数2删除几个，参数3需要添加的元素 会改变本身
+                        sort
+                        some 如果有一个元素满足那么就返回
 
 
 
-                                    */
+                                          */
 
       // 删除
       // pop
@@ -610,39 +638,39 @@
       //   console.log('fe:' + i)
       // }
       // console.log('ge:' + i)
-      var name = 'window'
-      var person1 = {
-        name: 'person1',
-        foo1: function () {
-          console.log(this.name)
-        },
-        foo2: () => console.log(this.name),
-        foo3: function () {
-          return function () {
-            console.log(this.name)
-          }
-        },
-        foo4: function () {
-          return () => {
-            console.log(this.name)
-          }
-        },
-      }
-      var person2 = { name: 'person2' }
+      // var name = 'window'
+      // var person1 = {
+      //   name: 'person1',
+      //   foo1: function () {
+      //     console.log(this.name)
+      //   },
+      //   foo2: () => console.log(this.name),
+      //   foo3: function () {
+      //     return function () {
+      //       console.log(this.name)
+      //     }
+      //   },
+      //   foo4: function () {
+      //     return () => {
+      //       console.log(this.name)
+      //     }
+      //   },
+      // }
+      // var person2 = { name: 'person2' }
 
-      person1.foo1() // person1
-      person1.foo1.call(person2) // person2
+      // person1.foo1() // person1
+      // person1.foo1.call(person2) // person2
 
-      person1.foo2() // window
-      person1.foo2.call(person2) // window
+      // person1.foo2() // window
+      // person1.foo2.call(person2) // window
 
-      person1.foo3()() // window
-      person1.foo3.call(person2)() // window
-      person1.foo3().call(person2) // person2
+      // person1.foo3()() // window
+      // person1.foo3.call(person2)() // window
+      // person1.foo3().call(person2) // person2
 
-      person1.foo4()() // window
-      person1.foo4.call(person2)() // window
-      person1.foo4().call(person2) // window
+      // person1.foo4()() // window
+      // person1.foo4.call(person2)() // window
+      // person1.foo4().call(person2) // window
     </script>
     <div class="wrapper">
       <div class="content wh100 border"></div>
